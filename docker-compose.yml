@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: biblioteca-postgres
+    environment:
+      POSTGRES_DB: library
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - biblioteca-net
+
+  biblioteca-cqrs:
+    build: .
+    container_name: biblioteca-cqrs
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/library
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    ports:
+      - "8089:8089"
+    networks:
+      - biblioteca-net
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+
+networks:
+  biblioteca-net:
+    driver: bridge

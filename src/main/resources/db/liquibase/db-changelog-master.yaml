@@ -1,0 +1,10 @@
+# ==============================================
+# Database Changelog Master
+# Description: Main Liquibase changelog file for cqrs Service
+# ==============================================
+
+databaseChangeLog:
+
+  - include:
+      file: changelogs/01-create-libro-table.yaml
+      relativeToChangelogFile: true

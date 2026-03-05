@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01-create-libro-table
+      author: sistema
+      context: development,production
+      comment: Crear tabla libro para almacenar información de libros de la biblioteca
+      changes:
+        - createTable:
+            tableName: libro
+            columns:
+              - column:
+                  name: id
+                  type: varchar(100)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: titulo
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: prestado
+                  type: boolean
+                  constraints:
+                    nullable: false
+                  defaultValueBoolean: false
+              - column:
+                  name: usuario_id
+                  type: varchar(100)
+                  constraints:
+                    nullable: true
+      rollback:
+        - dropTable:
+            tableName: libro

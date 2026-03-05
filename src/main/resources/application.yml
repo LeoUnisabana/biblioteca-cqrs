@@ -1,0 +1,53 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: cqrs
+    description: Demo CQRS
+    version: 1.0.0
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/library
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: validate  # Important: Let Liquibase handle schema
+
+
+  liquibase:
+    change-log: classpath:db/liquibase/db-changelog-master.yaml
+    enabled: true
+    drop-first: false
+    contexts: development,production
+    default-schema: public
+
+# Actuator configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
+
+# Configuración de OpenAPI/Swagger
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    tags-sorter: alpha
+    operations-sorter: alpha
+    display-request-duration: true
+    disable-swagger-default-url: true
+    doc-expansion: none
+  show-actuator: false

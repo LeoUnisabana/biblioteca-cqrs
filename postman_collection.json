@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "f3d3b496-8e4d-44f4-affc-0c927bc035da",
+    "name": "Arquitectura",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "26026124",
+    "_collection_link": "https://go.postman.co/collection/26026124-f3d3b496-8e4d-44f4-affc-0c927bc035da?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "CQRS",
+      "item": [
+        {
+          "name": "CreateBook",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"1\",\r\n  \"titulo\": \"Clean Code\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/libros",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "libros"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PrestarLibro",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"libroId\": \"1\",\r\n  \"usuarioId\": \"u123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/libros/prestar",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "libros",
+                "prestar"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GetLibro",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/libros/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "libros",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DevolverLibro",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"libroId\": \"1\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/libros/devolver",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "libros",
+                "devolver"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

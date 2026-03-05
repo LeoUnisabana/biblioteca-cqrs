@@ -1,0 +1,15 @@
+# Ignorar archivos y carpetas innecesarias para la imagen Docker
+/target/
+/.git/
+/.idea/
+*.iml
+*.log
+*.md
+*.DS_Store
+*.swp
+*.bak
+*.tmp
+/test/
+
+HELP.md
+postman_collection.json
