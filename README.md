@@ -1,4 +1,4 @@
-# Demo patrón CQRS Biblioteca 
+# Demo patrón CQRS Biblioteca y Despliegue
 
 Leonardo Pérez Ramírez
 
