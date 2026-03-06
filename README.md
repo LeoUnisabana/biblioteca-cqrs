@@ -1,14 +1,5 @@
 # Demo patrón CQRS Biblioteca 
 
-# Grupo 9. Integrantes:
-Angie Lorena Prieto Dominguez
-
-Rosemberg Porras Mancilla
-
-Ivan Felipe Vera Triana
-
-Juan Felipe Gonzalez Ortiz
-
 Leonardo Pérez Ramírez
 
 ---
