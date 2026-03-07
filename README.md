@@ -4,7 +4,6 @@ Leonardo Pérez Ramírez
 
 ---
 
-
 ## Descripción
 
 Este proyecto es una demostración académica de la arquitectura CQRS (Command Query Responsibility Segregation) aplicada sobre Clean Architecture usando Spring Boot y una base de datos PostgreSQL gestionada con Liquibase. El objetivo es mostrar de forma didáctica cómo separar completamente el modelo de escritura (commands) del modelo de lectura (queries) en un sistema de gestión de biblioteca.
