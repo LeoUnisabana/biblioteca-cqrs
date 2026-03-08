@@ -31,7 +31,7 @@ CQRS es un patrón arquitectónico que propone separar las operaciones de escrit
 ```
 com.biblioteca.cqrs
 ├── application
-│   ├── command        # DTOs de escritura
+│   ├── command        # DTOs de escritura 
 │   ├── query          # DTOs de consulta
 │   └── handler        # Orquestadores de comandos y queries
 ├── domain
