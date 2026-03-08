@@ -26,7 +26,7 @@ CQRS es un patrón arquitectónico que propone separar las operaciones de escrit
 
 ---
 
-## Estructura del Proyecto
+## Estructura del Proyecto.
 
 ```
 com.biblioteca.cqrs
